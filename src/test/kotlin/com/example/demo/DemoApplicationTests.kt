@@ -28,6 +28,15 @@ class MyBar : Foo() {
 	}
 }
 
+@Component
+class MyBaz {
+	private val _hasError = MyBoolean(false)
+	val hasError: Boolean get() = _hasError.get()
+
+	fun whatever() {
+	}
+}
+
 @SpringBootTest
 class DemoApplicationTests {
 	@Autowired
@@ -36,13 +45,21 @@ class DemoApplicationTests {
 	@Autowired
 	lateinit var bar: MyBar
 
+	@Autowired
+	lateinit var baz: MyBar
+
 	@Test
-	fun fooWorks() {
+	fun `foo fails`() {
 		foo.hasError
 	}
 
 	@Test
-	fun barWorks() {
+	fun `bar works`() {
 		bar.hasError
+	}
+
+	@Test
+	fun `baz works`() {
+		baz.hasError
 	}
 }
