@@ -33,6 +33,7 @@ class MyBaz {
 	private val _hasError = MyBoolean(false)
 	val hasError: Boolean get() = _hasError.get()
 
+	@Transactional
 	fun whatever() {
 	}
 }
