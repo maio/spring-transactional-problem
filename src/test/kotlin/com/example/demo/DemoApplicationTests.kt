@@ -47,7 +47,7 @@ class DemoApplicationTests {
 	lateinit var bar: MyBar
 
 	@Autowired
-	lateinit var baz: MyBar
+	lateinit var baz: MyBaz
 
 	@Test
 	fun `foo fails`() {
